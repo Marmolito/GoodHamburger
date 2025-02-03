@@ -1,9 +1,9 @@
+
 services:
   app:
     build: .
     ports:
       - "3000:3000"
     volumes:
-      - .:/usr/src/app
-    environment:
-      - NODE_ENV=production
+      - .:/app
+    command: npm start

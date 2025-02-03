@@ -1,24 +1,25 @@
 {
 	"info": {
-		"_postman_id": "a69a4010-b811-4080-9bce-f83486b75101",
-		"name": "Good Hamburger API",
+		"_postman_id": "c783487a-6a67-4652-b414-646da3c9fe8b",
+		"name": "GOOD HAMBURGER API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "17993387"
 	},
 	"item": [
 		{
-			"name": "Get Menu",
+			"name": "Get Full Menu",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/menu",
+					"raw": "http://localhost:3000/api/menu",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"menu"
 					]
 				}
@@ -31,13 +32,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/sandwiches",
+					"raw": "http://localhost:3000/api/menu/sandwiches",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
+						"menu",
 						"sandwiches"
 					]
 				}
@@ -50,13 +53,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/extras",
+					"raw": "http://localhost:3000/api/menu/extras",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
+						"menu",
 						"extras"
 					]
 				}
@@ -64,27 +69,28 @@
 			"response": []
 		},
 		{
-			"name": "Create Order",
+			"name": "Place Order",
 			"request": {
 				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"sandwich\": 1, \"fries\": 1, \"softDrink\": 1 }"
+					"raw": "{\n  \"sandwichId\": 1,\n  \"extrasIds\": [4, 5]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/orders",
+					"raw": "http://localhost:3000/api/orders",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"orders"
 					]
 				}
@@ -92,18 +98,19 @@
 			"response": []
 		},
 		{
-			"name": "Get Orders",
+			"name": "Get All Orders",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/orders",
+					"raw": "http://localhost:3000/api/orders",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"orders"
 					]
 				}
@@ -114,24 +121,25 @@
 			"name": "Update Order",
 			"request": {
 				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"sandwich\": 2, \"fries\": 0, \"softDrink\": 1 }"
+					"raw": "{\n  \"sandwichId\": 2,\n  \"extrasIds\": [4]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/orders/1",
+					"raw": "http://localhost:3000/api/orders/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"orders",
 						"1"
 					]
@@ -145,13 +153,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/orders/1",
+					"raw": "http://localhost:3000/api/orders/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"orders",
 						"1"
 					]
