@@ -1,0 +1,77 @@
+{
+  "info": {
+    "name": "Good Hamburger API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Menu",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/menu"
+      }
+    },
+    {
+      "name": "Get Sandwiches",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/sandwiches"
+      }
+    },
+    {
+      "name": "Get Extras",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/extras"
+      }
+    },
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:3000/orders",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"sandwich\": 1, \"fries\": 1, \"softDrink\": 1 }"
+        }
+      }
+    },
+    {
+      "name": "Get Orders",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/orders"
+      }
+    },
+    {
+      "name": "Update Order",
+      "request": {
+        "method": "PUT",
+        "url": "http://localhost:3000/orders/{{order_id}}",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"sandwich\": 2, \"fries\": 0, \"softDrink\": 1 }"
+        }
+      }
+    },
+    {
+      "name": "Delete Order",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:3000/orders/{{order_id}}"
+      }
+    }
+  ]
+}
