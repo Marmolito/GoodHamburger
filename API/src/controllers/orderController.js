@@ -101,9 +101,9 @@ exports.deleteOrder = (req, res) => {
 
     const orderIndex = orders.findIndex(order => order.id === parseInt(id));
     if (orderIndex === -1) {
-        return res.status(404).json({ error: 'Pedido no encontrado.' });
+        return res.status(404).json({ error: 'Order not found.' });
     }
 
     orders.splice(orderIndex, 1);
-    res.status(200).json({ message: 'Pedido eliminado correctamente.' });
+    res.status(200).json({ message: 'Order eliminated successfully.' });
 };
